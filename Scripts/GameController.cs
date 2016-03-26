@@ -2,7 +2,8 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class GameController : MonoBehaviour {
+public class GameController : MonoBehaviour
+{
 
     public int[] Score;
 
@@ -12,25 +13,19 @@ public class GameController : MonoBehaviour {
 
     public GameObject Ball;
 
-    private bool hasStarted;
-
-	void Start ()
+    void Start()
     {
         Score[0] = 0;
         Score[1] = 0;
-        hasStarted = false;
     }
 
-    // my attempt to load in the play level when player presses space, unsure why broken
-    /* void Update()
+    void Update()
     {
-        if(hasStarted != true)
-            if (Input.GetButtonDown("Jump"))
-            {
-                Application.LoadLevel(1);
-                hasStarted = true;
-            }
-    } */
+        if (Input.GetKeyUp("escape"))
+        {
+            Application.Quit();
+        }
+    }
 
     public void AddScore(int playerNum)
     {
@@ -40,7 +35,7 @@ public class GameController : MonoBehaviour {
 
     private void UpdateScore()
     {
-        for(int i =0; i < Score.Length; i++)
+        for (int i = 0; i < Score.Length; i++)
         {
             ScoreText[i].text = string.Format("Score: {0}", Score[i]);
         }
