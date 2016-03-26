@@ -12,25 +12,19 @@ public class GameController : MonoBehaviour {
 
     public GameObject Ball;
 
-    private bool hasStarted;
-
 	void Start ()
     {
         Score[0] = 0;
         Score[1] = 0;
-        hasStarted = false;
     }
 
-    // my attempt to load in the play level when player presses space, unsure why broken
-    /* void Update()
+   void Update()
     {
-        if(hasStarted != true)
-            if (Input.GetButtonDown("Jump"))
-            {
-                Application.LoadLevel(1);
-                hasStarted = true;
-            }
-    } */
+        if (Input.GetKeyUp("escape"))
+        {
+            Application.Quit();
+        }
+    }
 
     public void AddScore(int playerNum)
     {
